@@ -1,0 +1,18 @@
+<launch>
+
+  <param name="/use_sim_time" value="false"/>
+
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" 
+    args="0.0 0.0 0.0 0.0 0.0 0.0 /base_link /laser 40" />
+
+  <node pkg="rviz" type="rviz" name="rviz" 
+    args="-d $(find laser_scan_matcher)/demo_amcl.vcg"/>
+
+  <node pkg="laser_scan_matcher" type="laser_scan_matcher_node" 
+    name="laser_scan_matcher_node" output="screen">
+    <param name="fixed_frame" value = "odom"/>
+    <param name="use_alpha_beta" value="true"/>
+    <param name="max_iterations" value="10"/>
+  </node>
+
+</launch>
