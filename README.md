@@ -3,7 +3,7 @@
 2. listen from [scan_tools](https://github.com/ccny-ros-pkg/scan_tools), laser_scan_matcher is inside scan_tools but we only need it.
 
 ### Dependencies
-+ laser_scan_matcher depends on csm, while csm depends on pcl(point cloud library)'s 3 packages: pcl_conversions, pcl_msgs and pcl_ros.
++ laser_scan_matcher depends on [csm](http://censi.mit.edu/software/csm/), while csm depends on pcl(point cloud library)'s 3 packages: pcl_conversions, pcl_msgs and pcl_ros.
 
 ### Based on [wstool](http://wiki.ros.org/wstool)
 + We are more familiar with catkin build process, so, here mention something about wstool using follow.
