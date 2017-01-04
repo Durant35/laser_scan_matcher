@@ -8,46 +8,41 @@ laser_scan_matcher depends on csm, while csm depends on pcl(point cloud library)
 
 ### Based on [wstool](http://wiki.ros.org/wstool)
 We are more familiar with catkin build process, so, here mention something about wstool using follow.
-1>. Create a catkin Workspace with wstool
+1. Create a catkin Workspace with wstool
    First, create a catkin workspace:
    ```sh
    $ mkdir -p ~/ros_catkin_ws
    $ cd ~/ros_catkin_ws
    ```
-2>. Initialize the Workspace Without a rosinstall file
+2. Initialize the Workspace Without a rosinstall file
    This will initialize an empty workspace. If you have a rosinstall file that you want to base your workspace on, skip to Initialize the Workspace from a rosinstall File below.
    ```sh
    $ wstool init src
    ```
     If you have rosinstall files to add to the workspace, proceed to Merge in Additional rosinstall Files below.
-3>. Initialize the Workspace from a rosinstall File
+3. Initialize the Workspace from a rosinstall File
    If you have already initialized your workspace, skip this step. If you have rosinstall files to add to the workspace, proceed to Merge in Additional rosinstall Files below.
    ```sh
    $ wstool init src PATH_TO_ROSINSTALL_FILE.rosinstall
    ```
    If you have rosinstall files to add to the workspace, proceed to Merge in Additional rosinstall Files below.
-4>. Merge in Additional rosinstall Files
+4. Merge in Additional rosinstall Files
    For each rosinstall file you want to add to your workspace, run this command
    ```sh
    $ wstool merge -t src PATH_TO_ROSINSTALL_FILE.rosinstall
    ```
-5>. Updating the Workspace
+5. Updating the Workspace
    After you've created your workspace and added repositories, you should update it to download the latest versions.
    ```sh
    $ wstool update -t src
    ```
 
 ### How to use on Ubuntu?
-
-1>. Installing PCL packages: pcl_conversions, pcl_msgs and pcl_ros
-
+1. Installing PCL packages: pcl_conversions, pcl_msgs and pcl_ros
    ```sh
    cd <your-ros-catkin-ws>
    ```
-
-2>. ​
-
-
+2. ​
 
 ### How to use on Raspberrypi?
 1>. Installing PCL
@@ -79,6 +74,7 @@ $ sudo mkswap /var/swap.img
 $ sudo swapon /var/swap.img
 $ free -m
 ```
+
 2>. Installing csm
 > Reference: [how to: Building PCL & laser_scan_matcher on Raspberry pi 2](http://answers.ros.org/question/229788/how-to-building-pcl-laser_scan_matcher-on-raspberry-pi-2/)
 ```shell
@@ -88,6 +84,7 @@ $ git clone https://github.com/AndreaCensi/csm.git
 $ cd csm/
 $ ./install_quickstart.sh
 ```
+
 3>. laser_scan_matcher, clone and catkin_make
 ```shell
 $ cd ~/my_catkin_ws/src
