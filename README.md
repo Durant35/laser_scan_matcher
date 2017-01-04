@@ -52,11 +52,13 @@
 > $ sudo apt-get install python-rosinstall-generator
 > ```
 
-1. Installing PCL packages: pcl_conversions, pcl_msgs and pcl_ros.
+1. Installing PCL packages: [pcl_conversions](https://github.com/ros-perception/pcl_conversions), [pcl_msgs](https://github.com/ros-perception/pcl_msgs) and [pcl_ros](https://github.com/ros-perception/perception_pcl).
    ```sh
    $ cd <your-catkin-workspace-path>
    $ rosinstall_generator pcl_conversions pcl_msgs pcl_ros ‐‐rosdistro <your-ros-version> ‐‐deps ‐‐wet‐only ‐‐exclude roslisp ‐‐tar > ros_pcl.rosinstall
    $ wstool init src ros_pcl.rosinstall
+   # This rosdep command installs all the missing system dependency
+   # (must be described in package.xml) in all the packages in your src directory.
    $ rosdep install ‐‐from‐paths src ‐‐ignore‐src ‐‐rosdistro <your-ros-version> ‐y ‐r
    $ catkin_make
    ```
